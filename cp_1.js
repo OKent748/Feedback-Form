@@ -53,5 +53,5 @@ document.body.addEventListener('click', (e) => {
     console.log('Background clicked!');
 });
 form.addEventListener('click', (e) => {
-    e.StopPropagation();
+    e.stopPropagation();
 });
