@@ -9,6 +9,7 @@ document.body.appendChild(tooltip);
 
 form.addEventListener('input', (e) => {
     if (e.target.id === 'comments') {
+        console.log('Input event fired', e.target.id);
         charCount.textContent = `Characters: ${e.target.value.length}`;
     }
 });
