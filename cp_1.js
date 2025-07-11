@@ -5,7 +5,7 @@ const charCount = document.getElementById('char-count');
 
 const tooltip = document.createElement('div');
 tooltip.className = 'tooltip';
-document.body.appendChild(toolTip);
+document.body.appendChild(tooltip);
 
 form.addEventListener('input', (e) => {
     if (e.target.id === 'comments') {
@@ -14,7 +14,7 @@ form.addEventListener('input', (e) => {
 });
 form.addEventListener('mouseover', (e) => {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
-        tooltip.textContent = 'Enter your ${e.target.name}';
+        tooltip.textContent = `Enter your ${e.target.name}`;
         tooltip.style.display = 'block';
         tooltip.style.top = `${e.pageY - 30}px`;
         tooltip.style.left = `${e.pageX + 10}px`;      
