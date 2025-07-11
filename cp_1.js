@@ -39,6 +39,7 @@ form.addEventListener('submit', (e) => {
         alert('Please fill out all fields.');
         return;
     }
+    document.getElementById('feedback-heading').style.display = 'block';
     const feedbackEntry = document.createElement('div');
     feedbackEntry.innerHTML =`
     <p><strong>${username}</strong> (${email})</p>
