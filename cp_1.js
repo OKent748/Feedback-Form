@@ -3,8 +3,8 @@ const inputs = form.querySelectorAll('input, textarea');
 const feedbackDisplay = document.getElementById('feedback-display');
 const charCount = document.getElementById('char-count');
 
-const toolTip = document.createElement('div');
-toolTip.className = 'tooltip';
+const tooltip = document.createElement('div');
+tooltip.className = 'tooltip';
 document.body.appendChild(toolTip);
 
 form.addEventListener('input', (e) => {
@@ -12,16 +12,16 @@ form.addEventListener('input', (e) => {
         charCount.textContent = `Characters: ${e.target.value.length}`;
     }
 });
-form.addEventListener('mousemover', (e) => {
+form.addEventListener('mouseover', (e) => {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
-        tooltip.textContent = 'Enter your ${e.target.name};
+        tooltip.textContent = 'Enter your ${e.target.name}';
         tooltip.style.display = 'block';
         tooltip.style.top = `${e.pageY - 30}px`;
         tooltip.style.left = `${e.pageX + 10}px`;      
     }
 });
 form.addEventListener('mousemove', (e) => {
-    tooltip.style.top = `${e.pageY - 3-}px`;
+    tooltip.style.top = `${e.pageY - 30}px`;
     tooltip.style.left = `${e.pageX + 10}px`;
 });
 form.addEventListener('mouseout', (e) => {
@@ -40,7 +40,7 @@ form.addEventListener('submit', (e) => {
         return;
     }
     const feedbackEntry = document.createElement('div');
-    feedbackEntry.innerHTML = 
+    feedbackEntry.innerHTML =`
     <p><strong>${username}</strong> (${email})</p>
     <p>${comments}</p>
     <hr/>
